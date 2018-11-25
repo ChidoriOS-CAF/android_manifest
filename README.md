@@ -9,7 +9,7 @@ How to Build?
 To initialize your local repository:
 
 ```bash
-  repo init -u git://github.com/ChidoriOS/manifest.git -b pie
+  repo init -u https://github.com/ChidoriOS/android_manifest.git -b pie
 ```
   
 Then to sync up:
