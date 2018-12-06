@@ -1,0 +1,168 @@
+<manifest>
+
+  <remote  name="github"
+           fetch="https://github.com/" />
+
+  <remote  name="aosp"
+           fetch="https://android.googlesource.com"
+           review="android-review.googlesource.com"
+           revision="refs/tags/android-9.0.0_r21" />
+
+  <remote  name="chidori"
+           revision="pie"
+           fetch="https://github.com/ChidoriOS" />
+
+  <remote  name="chidori-gitlab"
+           revision="pie"
+           fetch="https://gitlab.com/ChidoriOS" />
+
+  <remote  name="chidori-devices"
+           revision="pie"
+           fetch="https://github.com/ChidoriOS-Devices" />
+
+  <remote  name="lineage"
+           revision="lineage-16.0"
+           fetch="https://github.com/LineageOS" />
+
+  <!-- Remove -->
+  <remove-project name="device/google/muskie" />
+  <remove-project name="device/google/taimen" />
+  <remove-project name="device/google/wahoo" />
+  <remove-project name="device/qcom/common" />
+  <remove-project name="platform/bionic" />
+  <remove-project name="platform/bootable/recovery" />
+  <remove-project name="platform/build" />
+  <remove-project name="platform/build/soong" />
+  <remove-project name="platform/external/ant-wireless/ant_native" />
+  <remove-project name="platform/external/ant-wireless/ant_service" />
+  <remove-project name="platform/external/perfetto" />
+  <remove-project name="platform/external/selinux" />
+  <remove-project name="platform/external/tinycompress" />
+  <remove-project name="platform/external/wpa_supplicant_8" />
+  <remove-project name="platform/frameworks/av" />
+  <remove-project name="platform/frameworks/base" />
+  <remove-project name="platform/frameworks/native" />
+  <remove-project name="platform/frameworks/opt/net/wifi" />
+  <remove-project name="platform/frameworks/opt/telephony" />
+  <remove-project name="platform/hardware/interfaces" />
+  <remove-project name="platform/hardware/libhardware" />
+  <!--<remove-project name="platform/hardware/ril" />-->
+  <remove-project name="platform/hardware/qcom/audio" />
+  <remove-project name="platform/hardware/qcom/bt" />
+  <remove-project name="platform/hardware/qcom/camera" />
+  <remove-project name="platform/hardware/qcom/display" />
+  <remove-project name="platform/hardware/qcom/gps" />
+  <remove-project name="platform/hardware/qcom/media" />
+  <remove-project name="platform/hardware/qcom/wlan" />
+  <remove-project name="platform/packages/apps/Messaging" />
+  <remove-project name="platform/packages/apps/Settings" />
+  <remove-project name="platform/packages/providers/MediaProvider" />
+  <remove-project name="platform/packages/services/Telecomm" />
+  <remove-project name="platform/prebuilts/build-tools" />
+  <remove-project name="platform/system/core" />
+  <remove-project name="platform/system/libhidl" />
+  <remove-project name="platform/system/qcom" />
+  <remove-project name="platform/system/vold" />
+  <remove-project name="platform/vendor/qcom-opensource/cryptfs_hw" />
+  <remove-project name="platform/vendor/qcom-opensource/fm" />
+  <remove-project name="platform/vendor/qcom-opensource/fm-commonsys" />
+  <remove-project name="platform/vendor/qcom-opensource/system/bt" />
+  <remove-project name="platform/vendor/qcom-opensource/wlan/prima" />
+  <remove-project name="platform/vendor/qcom-opensource/wlan/qcacld-2.0" />
+  <remove-project name="platform/vendor/qcom-opensource/wlan/utils/sigma-dut" />
+
+
+  <!-- Chidori Repos -->
+  <project path="bionic" name="android_bionic" remote="chidori" />
+  <project path="bootable/recovery" name="android_bootable_recovery" remote="chidori" />
+  <project path="build/make" name="android_build" remote="chidori" >
+    <copyfile src="core/root.mk" dest="Makefile" />
+    <linkfile src="CleanSpec.mk" dest="build/CleanSpec.mk" />
+    <linkfile src="buildspec.mk.default" dest="build/buildspec.mk.default" />
+    <linkfile src="core" dest="build/core" />
+    <linkfile src="envsetup.sh" dest="build/envsetup.sh" />
+    <linkfile src="target" dest="build/target" />
+    <linkfile src="tools" dest="build/tools" />
+  </project>
+  <project path="build/soong" name="android_build_soong"  remote="chidori" >
+    <linkfile src="root.bp" dest="Android.bp" />
+    <linkfile src="bootstrap.bash" dest="bootstrap.bash" />
+  </project>
+  <project path="device/chidori/sepolicy" name="android_device_chidori_sepolicy" remote="chidori" />
+  <project path="device/qcom/common" name="android_device_qcom_common" remote="chidori" />
+  <project path="device/qcom/sepolicy-legacy" name="android_device_qcom_sepolicy-legacy" remote="lineage" />
+  <project path="external/perfetto" name="android_external_perfetto" remote="chidori" />
+  <project path="external/selinux" name="android_external_selinux" remote="chidori" />
+  <project path="external/wpa_supplicant_8" name="android_external_wpa_supplicant_8" remote="chidori" />
+  <project path="frameworks/av" name="android_frameworks_av" remote="chidori" />
+  <project path="frameworks/base" name="android_frameworks_base" remote="chidori" />
+  <project path="frameworks/native" name="android_frameworks_native" remote="chidori" />
+  <project path="frameworks/opt/net/wifi" name="android_frameworks_opt_net_wifi" remote="chidori" />
+  <project path="frameworks/opt/telephony" name="android_frameworks_opt_telephony" remote="chidori" />
+  <project path="hardware/interfaces" name="android_hardware_interfaces" remote="chidori" />
+  <project path="hardware/chidori/interfaces" name="android_hardware_chidori_interfaces" remote="chidori" />
+  <project path="hardware/chidori/telephony" name="android_hardware_chidori_telephony" remote="chidori" />
+  <project path="hardware/libhardware" name="android_hardware_libhardware" remote="chidori" />
+  <project path="manifest" name="android_manifest" remote="chidori" />
+  <project path="packages/apps/FMRadio" name="android_packages_apps_FMRadio" remote="lineage" />
+  <project path="packages/apps/Messaging" name="android_packages_apps_Messaging" remote="chidori" />
+  <project path="packages/apps/Settings" name="android_packages_apps_Settings" remote="chidori" />
+  <project path="packages/providers/MediaProvider" name="android_packages_providers_MediaProvider" remote="chidori" />
+  <project path="packages/services/Telecomm" name="android_packages_services_Telecomm" remote="chidori" />
+  <project path="packages/themes" name="android_packages_themes" remote="chidori" />
+  <project path="prebuilts/build-tools" name="android_prebuilts_build-tools" remote="chidori" />
+  <project path="system/core" name="android_system_core" remote="chidori-gitlab" />
+  <project path="system/libhidl" name="android_system_libhidl" remote="chidori" />
+  <project path="system/qcom" name="android_system_qcom" remote="chidori" />
+  <project path="system/vold" name="android_system_vold" remote="chidori" />
+  <project path="vendor/chidori" name="android_vendor_chidori" remote="chidori" />
+  <project path="vendor/qcom/opensource/commonsys/cryptfs_hw" name="android_vendor_qcom_opensource_commonsys_cryptfs_hw" remote="chidori" />
+  <!--<project path="vendor/qcom/opensource/commonsys/fm" name="android_vendor_qcom_opensource_commonsys_fm" remote="chidori" />-->
+  <project path="vendor/qcom/opensource/commonsys/system/bt" name="android_vendor_qcom_opensource_commonsys_system_bt" remote="chidori" />
+  <project clone-depth="1" path="vendor/qcom/sdclang-3.9/linux-x86" name="android_vendor_qcom_sdclang-3.9_linux-x86" remote="chidori" />
+
+  <!-- Hals -->
+  <project path="external/ant-wireless/ant_native" name="android_external_ant-wireless_ant_native" remote="chidori" />
+  <project path="external/ant-wireless/ant_service" name="android_external_ant-wireless_ant_service" remote="lineage" />
+  <project path="external/ant-wireless/antradio-library" name="android_external_ant-wireless_antradio-library" remote="lineage" />
+  <project path="external/tinycompress" name="android_external_tinycompress" remote="lineage" />
+  <project path="hardware/qcom/audio/default" name="android_hardware_qcom_audio" remote="lineage" />
+  <project path="hardware/qcom/bt" name="android_hardware_qcom_bt" revision="pie-caf" remote="chidori" />
+  <project path="hardware/qcom/camera" name="android_hardware_qcom_camera" remote="lineage" />
+  <project path="hardware/qcom/display" name="android_hardware_qcom_display" remote="lineage" />
+  <project path="hardware/qcom/fm" name="android_hardware_qcom_fm" remote="lineage" />
+  <project path="hardware/qcom/gps" name="android_hardware_qcom_gps" remote="lineage" />
+  <project path="hardware/qcom/media" name="android_hardware_qcom_media" remote="lineage" />
+  <!-- <project path="hardware/ril" name="android_hardware_ril" remote="lineage" /> -->
+  <project path="hardware/qcom/wlan" name="android_hardware_qcom_wlan" remote="lineage" />
+
+
+  <project path="hardware/qcom/audio-caf/apq8084" name="android_hardware_qcom_audio" revision="lineage-16.0-caf-8084" remote="lineage" />
+  <project path="hardware/qcom/audio-caf/msm8916" name="android_hardware_qcom_audio" revision="lineage-16.0-caf-8916" remote="lineage" />
+  <project path="hardware/qcom/audio-caf/msm8952" name="android_hardware_qcom_audio" revision="lineage-16.0-caf-8952" remote="lineage" />
+  <project path="hardware/qcom/audio-caf/msm8960" name="android_hardware_qcom_audio" revision="lineage-16.0-caf-8960" remote="lineage" />
+  <project path="hardware/qcom/audio-caf/msm8974" name="android_hardware_qcom_audio" revision="lineage-16.0-caf-8974" remote="lineage" />
+  <project path="hardware/qcom/audio-caf/msm8994" name="android_hardware_qcom_audio" revision="lineage-16.0-caf-8994" remote="lineage" />
+  <project path="hardware/qcom/audio-caf/msm8996" name="android_hardware_qcom_audio" revision="lineage-16.0-caf-8996" remote="lineage" />
+  <project path="hardware/qcom/audio-caf/msm8998" name="android_hardware_qcom_audio" revision="lineage-16.0-caf-8998" remote="lineage" />
+  <!--<project path="hardware/qcom/bt-caf" name="android_hardware_qcom_bt" revision="pie-caf" remote="chidori" />-->
+  <project path="hardware/qcom/display-caf/apq8084" name="android_hardware_qcom_display" revision="lineage-16.0-caf-8084" remote="lineage" />
+  <project path="hardware/qcom/display-caf/msm8916" name="android_hardware_qcom_display" revision="lineage-16.0-caf-8916" remote="lineage" />
+  <project path="hardware/qcom/display-caf/msm8952" name="android_hardware_qcom_display" revision="lineage-16.0-caf-8952" remote="lineage" />
+  <project path="hardware/qcom/display-caf/msm8960" name="android_hardware_qcom_display" revision="lineage-16.0-caf-8960" remote="lineage" />
+  <project path="hardware/qcom/display-caf/msm8974" name="android_hardware_qcom_display" revision="lineage-16.0-caf-8974" remote="lineage" />
+  <project path="hardware/qcom/display-caf/msm8994" name="android_hardware_qcom_display" revision="lineage-16.0-caf-8994" remote="lineage" />
+  <project path="hardware/qcom/display-caf/msm8996" name="android_hardware_qcom_display" revision="lineage-16.0-caf-8996" remote="lineage" />
+  <project path="hardware/qcom/display-caf/msm8998" name="android_hardware_qcom_display" revision="lineage-16.0-caf-8998" remote="lineage" />
+  <project path="hardware/qcom/media-caf/apq8084" name="android_hardware_qcom_media" revision="lineage-16.0-caf-8084" remote="lineage" />
+  <project path="hardware/qcom/media-caf/msm8916" name="android_hardware_qcom_media" revision="lineage-16.0-caf-8916" remote="lineage" />
+  <project path="hardware/qcom/media-caf/msm8952" name="android_hardware_qcom_media" revision="lineage-16.0-caf-8952" remote="lineage" />
+  <project path="hardware/qcom/media-caf/msm8960" name="android_hardware_qcom_media" revision="lineage-16.0-caf-8960" remote="lineage" />
+  <project path="hardware/qcom/media-caf/msm8974" name="android_hardware_qcom_media" revision="lineage-16.0-caf-8974" remote="lineage" />
+  <project path="hardware/qcom/media-caf/msm8994" name="android_hardware_qcom_media" revision="lineage-16.0-caf-8994" remote="lineage" />
+  <project path="hardware/qcom/media-caf/msm8996" name="android_hardware_qcom_media" revision="lineage-16.0-caf-8996" remote="lineage" />
+  <project path="hardware/qcom/media-caf/msm8998" name="android_hardware_qcom_media" revision="lineage-16.0-caf-8998" remote="lineage" />
+  <!--<project path="hardware/ril-caf" name="android_hardware_ril" revision="lineage-16.0-caf" remote="lineage" />-->
+  <project path="hardware/qcom/wlan-caf" name="android_hardware_qcom_wlan" revision="lineage-16.0-caf" remote="lineage" />
+</manifest>
+

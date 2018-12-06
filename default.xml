@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <manifest>
-  <remote fetch="git://codeaurora.org/quic/la" name="caf" review="codeaurora.org"/>
-  <default remote="caf" revision="LA.UM.7.5.r1"/>
+  <remote fetch="git://codeaurora.org/quic/la" name="caf" review="codeaurora.org" revision="LA.UM.7.5.r1"/>
+  <default remote="caf"/>
   <project groups="p-fs-release,pdk,pdk-cw-fs" name="device/common" revision="ks-aosp.lnx.1.0.r5-rel"/>
   <project groups="p-fs-release,pdk" name="device/generic/arm64" revision="ks-aosp.lnx.1.0.r5-rel"/>
   <project groups="p-fs-release,pdk" name="device/generic/armv7-a-neon" revision="ks-aosp.lnx.1.0.r5-rel"/>
@@ -701,4 +701,7 @@
   <project name="platform/vendor/qcom/wlan" path="device/qcom/wlan" revision="wlan-service.lnx.4.0.r10-rel"/>
   <project groups="p-fs-release,pdk" name="toolchain/binutils" revision="ks-aosp.lnx.1.0.r5-rel"/>
   <project groups="p-fs-release,pdk" name="toolchain/pgo-profiles" revision="ks-aosp.lnx.1.0.r5-rel"/>
+
+  <!-- CHIDORI -->
+  <include name="chidori.xml" />
 </manifest>
